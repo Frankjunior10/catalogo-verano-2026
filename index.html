@@ -6,349 +6,83 @@
     <title>Catálogo de Ropa - Colección</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+    
 <body>
 
-    <!-- Encabezado del Catálogo -->
     <header class="catalogo-header">
         <h1>Nueva Colección</h1>
         <p>Explora nuestras prendas exclusivas y haz tu pedido al instante.</p>
     </header>
 
-<!-- Contenedor de Productos (Grid para 30 prendas) -->
-    <main class="grid-productos">
+    <div class="contenedor-principal">
 
-        <!-- Producto 1 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda1.jpg" alt="Prenda 1">
-            <div class="info-producto">
-                <h3>Camisa Casual Urbana</h3>
-                <span class="precio">$45.00</span>
-                <p>Algodón 100% transpirable, ideal para cualquier ocasión.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Camisa%20Casual%20Urbana" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+        <aside class="sidebar">
+            <h3>Categorías</h3>
+            <ul class="lista-categorias">
+                <li><button class="btn-filtro activo" onclick="filtrarProductos('todos')">Ver Todos</button></li>
+                <li><button class="btn-filtro" onclick="filtrarProductos('poleras')">Poleras / Polos</button></li>
+                <li><button class="btn-filtro" onclick="filtrarProductos('jeans')">Jeans y Pantalones</button></li>
+                <li><button class="btn-filtro" onclick="filtrarProductos('vestidos')">Vestidos</button></li>
+                <li><button class="btn-filtro" onclick="filtrarProductos('abrigos')">Abrigos y Chaquetas</button></li>
+            </ul>
+        </aside>
+
+        <main class="grid-productos">
+
+            <div class="tarjeta-producto" data-categoria="poleras">
+                <img src="img/prenda1.jpg" alt="Prenda 1">
+                <div class="info-producto">
+                    <h3>Polo Básico Oversize</h3>
+                    <span class="precio">$25.00</span>
+                    <p>Algodón suave con diseño moderno y relajado.</p>
+                    <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Polo%20Básico" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Producto 2 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda2.jpg" alt="Prenda 2">
-            <div class="info-producto">
-                <h3>Vestido Elegante</h3>
-                <span class="precio">$79.90</span>
-                <p>Diseño exclusivo para eventos formales y cenas especiales.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Vestido%20Elegante" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            <div class="tarjeta-producto" data-categoria="jeans">
+                <img src="img/prenda2.jpg" alt="Prenda 2">
+                <div class="info-producto">
+                    <h3>Pantalón Denim Slim</h3>
+                    <span class="precio">$55.00</span>
+                    <p>Corte moderno con flexibilidad para mayor comodidad.</p>
+                    <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Pantalón%20Denim" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Producto 3 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda3.jpg" alt="Prenda 3">
-            <div class="info-producto">
-                <h3>Pantalón Denim Slim</h3>
-                <span class="precio">$55.00</span>
-                <p>Corte moderno con flexibilidad para mayor comodidad.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Pantalón%20Denim%20Slim" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            <div class="tarjeta-producto" data-categoria="vestidos">
+                <img src="img/prenda3.jpg" alt="Prenda 3">
+                <div class="info-producto">
+                    <h3>Vestido Elegante</h3>
+                    <span class="precio">$79.90</span>
+                    <p>Diseño exclusivo para eventos formales.</p>
+                    <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Vestido" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Producto 4 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda4.jpg" alt="Prenda 4">
-            <div class="info-producto">
-                <h3>Chaqueta de Cuero</h3>
-                <span class="precio">$120.00</span>
-                <p>Estilo clásico y duradero para los días fríos.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Chaqueta%20de%20Cuero" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
+            </main>
 
-        <!-- Producto 5 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda5.jpg" alt="Prenda 5">
-            <div class="info-producto">
-                <h3>Blusa Formal</h3>
-                <span class="precio">$38.00</span>
-                <p>Elegancia y frescura para la oficina o reuniones.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Blusa%20Formal" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
+    </div>
 
-        <!-- Producto 6 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda6.jpg" alt="Prenda 6">
-            <div class="info-producto">
-                <h3>Pantalón Jogger</h3>
-                <span class="precio">$42.00</span>
-                <p>Comodidad total para entrenar o uso diario urbano.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Pantalón%20Jogger" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
+    <script>
+        function filtrarProductos(categoria) {
+            // Cambiar estilos de los botones activos
+            const botones = document.querySelectorAll('.btn-filtro');
+            botones.forEach(btn => btn.classList.remove('activo'));
+            event.target.classList.add('activo');
 
-        <!-- Producto 7 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda7.jpg" alt="Prenda 7">
-            <div class="info-producto">
-                <h3>Sweater Tejido</h3>
-                <span class="precio">$50.00</span>
-                <p>Suave, abrigador y de excelente acabado.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Sweater%20Tejido" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
+            // Mostrar u ocultar productos según la categoría
+            const productos = document.querySelectorAll('.tarjeta-producto');
+            productos.forEach(producto => {
+                const catProducto = producto.getAttribute('data-categoria');
+                if (categoria === 'todos' || catProducto === categoria) {
+                    producto.style.display = 'flex';
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
-        <!-- Producto 8 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda8.jpg" alt="Prenda 8">
-            <div class="info-producto">
-                <h3>Short de Verano</h3>
-                <span class="precio">$29.90</span>
-                <p>Frescura y estilo relajado para días soleados.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Short%20de%20Verano" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 9 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda9.jpg" alt="Prenda 9">
-            <div class="info-producto">
-                <h3>Blazer Ejecutivo</h3>
-                <span class="precio">$89.00</span>
-                <p>Corte entallado para un look profesional impecable.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Blazer%20Ejecutivo" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 10 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda10.jpg" alt="Prenda 10">
-            <div class="info-producto">
-                <h3>Polo Básico Oversize</h3>
-                <span class="precio">$25.00</span>
-                <p>Algodón suave con diseño moderno y relajado.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Polo%20Básico%20Oversize" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 11 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda11.jpg" alt="Prenda 11">
-            <div class="info-producto">
-                <h3>Falda Midi Plizada</h3>
-                <span class="precio">$48.00</span>
-                <p>Movimiento y elegancia para cualquier temporada.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Falda%20Midi%20Plizada" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 12 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda12.jpg" alt="Prenda 12">
-            <div class="info-producto">
-                <h3>Camisa de Franela</h3>
-                <span class="precio">$46.00</span>
-                <p>Estilo leñador abrigador y cómodo.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Camisa%20de%20Franela" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 13 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda13.jpg" alt="Prenda 13">
-            <div class="info-producto">
-                <h3>Pantalón de Vestir</h3>
-                <span class="precio">$60.00</span>
-                <p>Tela fina y recta para ocasiones formales.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Pantalón%20de%20Vestir" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 14 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda14.jpg" alt="Prenda 14">
-            <div class="info-producto">
-                <h3>Cardigan Largo</h3>
-                <span class="precio">$55.00</span>
-                <p>Ideal para combinar con tus capas de invierno.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Cardigan%20Largo" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 15 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda15.jpg" alt="Prenda 15">
-            <div class="info-producto">
-                <h3>Vestido Casual Verano</h3>
-                <span class="precio">$65.00</span>
-                <p>Estampado fresco y ligero para paseos al aire libre.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Vestido%20Casual%20Verano" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 16 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda16.jpg" alt="Prenda 16">
-            <div class="info-producto">
-                <h3>Chaqueta Bomber</h3>
-                <span class="precio">$95.00</span>
-                <p>Diseño urbano y juvenil con acabados premium.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Chaqueta%20Bomber" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 17 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda17.jpg" alt="Prenda 17">
-            <div class="info-producto">
-                <h3>Polo Deportivo Dri-Fit</h3>
-                <span class="precio">$30.00</span>
-                <p>Tela de secado rápido que repele el sudor.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Polo%20Deportivo%20Dri-Fit" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 18 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda18.jpg" alt="Prenda 18">
-            <div class="info-producto">
-                <h3>Pantalón Cargo</h3>
-                <span class="precio">$58.00</span>
-                <p>Múltiples bolsillos y diseño ultra resistente.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Pantalón%20Cargo" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 19 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda19.jpg" alt="Prenda 19">
-            <div class="info-producto">
-                <h3>Casaca Impermeable</h3>
-                <span class="precio">$110.00</span>
-                <p>Protección total contra la lluvia y el viento.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Casaca%20Impermeable" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 20 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda20.jpg" alt="Prenda 20">
-            <div class="info-producto">
-                <h3>Top Deportivo</h3>
-                <span class="precio">$28.00</span>
-                <p>Soporte firme y flexible para entrenamientos.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Top%20Deportivo" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 21 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda21.jpg" alt="Prenda 21">
-            <div class="info-producto">
-                <h3>Pijama de Algodón</h3>
-                <span class="precio">$40.00</span>
-                <p>Comodidad absoluta para descansar en casa.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Pijama%20de%20Algodón" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 22 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda22.jpg" alt="Prenda 22">
-            <div class="info-producto">
-                <h3>Camisa Oxford</h3>
-                <span class="precio">$48.00</span>
-                <p>Clásica, formal y fácil de combinar.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Camisa%20Oxford" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 23 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda23.jpg" alt="Prenda 23">
-            <div class="info-producto">
-                <h3>Leggins Elasticados</h3>
-                <span class="precio">$32.00</span>
-                <p>Alta elasticidad y calce perfecto sin transparencias.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20los%20Leggins%20Elasticados" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 24 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda24.jpg" alt="Prenda 24">
-            <div class="info-producto">
-                <h3>Chompa Cuello V</h3>
-                <span class="precio">$52.00</span>
-                <p>Estilo elegante para looks casuales de oficina.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Chompa%20Cuello%20V" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 25 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda25.jpg" alt="Prenda 25">
-            <div class="info-producto">
-                <h3>Vestido de Coctel</h3>
-                <span class="precio">$95.00</span>
-                <p>Sofisticado y diseñado para destacar.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Vestido%20de%20Coctel" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 26 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda26.jpg" alt="Prenda 26">
-            <div class="info-producto">
-                <h3>Polo Estampado Art</h3>
-                <span class="precio">$27.00</span>
-                <p>Diseño gráfico moderno de edición limitada.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Polo%20Estampado%20Art" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 27 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda27.jpg" alt="Prenda 27">
-            <div class="info-producto">
-                <h3>Bermuda de Jean</h3>
-                <span class="precio">$36.00</span>
-                <p>Fresca y resistente para días casuales.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Bermuda%20de%20Jean" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 28 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda28.jpg" alt="Prenda 28">
-            <div class="info-producto">
-                <h3>Pantalón Wide Leg</h3>
-                <span class="precio">$62.00</span>
-                <p>Corte ancho en tendencia, cómodo y estilizado.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Pantalón%20Wide%20Leg" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 29 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda29.jpg" alt="Prenda 29">
-            <div class="info-producto">
-                <h3>Bufanda de Lana</h3>
-                <span class="precio">$22.00</span>
-                <p>Accesorio suave y abrigador para el frío.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Bufanda%20de%20Lana" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- Producto 30 -->
-        <div class="tarjeta-producto">
-            <img src="img/prenda30.jpg" alt="Prenda 30">
-            <div class="info-producto">
-                <h3>Abrigo Largo Clásico</h3>
-                <span class="precio">$135.00</span>
-                <p>Máxima elegancia y abrigo para temporada alta.</p>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Abrigo%20Largo%20Clásico" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-            </div>
-        </div>
-
-    </main>
-    <!-- Pie de página -->
     <footer>
         <p>&copy; 2026 Tu Marca de Ropa. Todos los derechos reservados.</p>
     </footer>
