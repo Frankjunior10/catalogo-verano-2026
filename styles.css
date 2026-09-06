@@ -45,6 +45,8 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    width: 100%;           /* Ocupa todo el espacio de su celda en la grilla */
+    box-sizing: border-box; /* Mantiene los márgenes internos estables */
 }
 
 .tarjeta-producto:hover {
