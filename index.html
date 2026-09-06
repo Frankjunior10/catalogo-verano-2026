@@ -3,88 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Ropa - Colección</title>
+    <title>Catálogo de Ropa - Tienda Online</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-    
 <body>
 
+    <!-- Encabezado del Catálogo -->
     <header class="catalogo-header">
         <h1>Nueva Colección</h1>
         <p>Explora nuestras prendas exclusivas y haz tu pedido al instante.</p>
     </header>
 
+    <!-- Contenedor general: Sidebar izquierda + Productos derecha -->
     <div class="contenedor-principal">
 
+        <!-- BARRA LATERAL (Filtros) -->
         <aside class="sidebar">
             <h3>Categorías</h3>
             <ul class="lista-categorias">
-                <li><button class="btn-filtro activo" onclick="filtrarProductos('todos')">Ver Todos</button></li>
-                <li><button class="btn-filtro" onclick="filtrarProductos('poleras')">Poleras / Polos</button></li>
-                <li><button class="btn-filtro" onclick="filtrarProductos('jeans')">Jeans y Pantalones</button></li>
-                <li><button class="btn-filtro" onclick="filtrarProductos('vestidos')">Vestidos</button></li>
-                <li><button class="btn-filtro" onclick="filtrarProductos('abrigos')">Abrigos y Chaquetas</button></li>
+                <li><button class="btn-filtro activo" onclick="filtrarProductos('todos', this)">Ver Todos</button></li>
+                <li><button class="btn-filtro" onclick="filtrarProductos('poleras', this)">Poleras / Polos</button></li>
+                <li><button class="btn-filtro" onclick="filtrarProductos('jeans', this)">Jeans y Pantalones</button></li>
+                <li><button class="btn-filtro" onclick="filtrarProductos('vestidos', this)">Vestidos</button></li>
+                <li><button class="btn-filtro" onclick="filtrarProductos('abrigos', this)">Abrigos y Chaquetas</button></li>
             </ul>
         </aside>
 
-        <main class="grid-productos">
-
-            <div class="tarjeta-producto" data-categoria="poleras">
-                <img src="img/prenda1.jpg" alt="Prenda 1">
-                <div class="info-producto">
-                    <h3>Polo Básico Oversize</h3>
-                    <span class="precio">$25.00</span>
-                    <p>Algodón suave con diseño moderno y relajado.</p>
-                    <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Polo%20Básico" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-                </div>
-            </div>
-
-            <div class="tarjeta-producto" data-categoria="jeans">
-                <img src="img/prenda2.jpg" alt="Prenda 2">
-                <div class="info-producto">
-                    <h3>Pantalón Denim Slim</h3>
-                    <span class="precio">$55.00</span>
-                    <p>Corte moderno con flexibilidad para mayor comodidad.</p>
-                    <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Pantalón%20Denim" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-                </div>
-            </div>
-
-            <div class="tarjeta-producto" data-categoria="vestidos">
-                <img src="img/prenda3.jpg" alt="Prenda 3">
-                <div class="info-producto">
-                    <h3>Vestido Elegante</h3>
-                    <span class="precio">$79.90</span>
-                    <p>Diseño exclusivo para eventos formales.</p>
-                    <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Vestido" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
-                </div>
-            </div>
-
-            </main>
+        <!-- CONTENEDOR DE PRODUCTOS (Se llena solo con JavaScript) -->
+        <main class="grid-productos" id="grid-productos">
+            <!-- Los productos se cargan automáticamente aquí -->
+        </main>
 
     </div>
 
+    <!-- Script de Carga Automática y Filtros -->
     <script>
-        function filtrarProductos(categoria) {
-            // Cambiar estilos de los botones activos
-            const botones = document.querySelectorAll('.btn-filtro');
-            botones.forEach(btn => btn.classList.remove('activo'));
-            event.target.classList.add('activo');
+        // TU LISTA DE PRODUCTOS: Aquí puedes agregar, quitar o editar ropa fácilmente en segundos.
+        const productos = [
+            { id: 1, nombre: "Polo Básico Oversize", categoria: "poleras", precio: 25.00, descripcion: "Algodón suave con diseño moderno y relajado.", img: "img/prenda1.jpg" },
+            { id: 2, nombre: "Pantalón Denim Slim", categoria: "jeans", precio: 55.00, descripcion: "Corte moderno con flexibilidad para mayor comodidad.", img: "img/prenda2.jpg" },
+            { id: 3, nombre: "Vestido Elegante", categoria: "vestidos", precio: 79.90, descripcion: "Diseño exclusivo para eventos formales.", img: "img/prenda3.jpg" },
+            { id: 4, nombre: "Chaqueta de Cuero", categoria: "abrigos", precio: 120.00, descripcion: "Estilo clásico y duradero para los días fríos.", img: "img/prenda4.jpg" },
+            { id: 5, nombre: "Blusa Formal", categoria: "poleras", precio: 38.00, descripcion: "Elegancia y frescura para la oficina o reuniones.", img: "img/prenda5.jpg" },
+            { id: 6, nombre: "Pantalón Jogger", categoria: "jeans", precio: 42.00, descripcion: "Comodidad total para entrenar o uso diario urbano.", img: "img/prenda6.jpg" }
+            // Puedes seguir agregando más prendas aquí abajo simplemente copiando una línea y cambiando los datos.
+        ];
 
-            // Mostrar u ocultar productos según la categoría
-            const productos = document.querySelectorAll('.tarjeta-producto');
-            productos.forEach(producto => {
-                const catProducto = producto.getAttribute('data-categoria');
-                if (categoria === 'todos' || catProducto === categoria) {
-                    producto.style.display = 'flex'; // Mantendrá la estructura interna limpia
-                    producto.style.visibility = 'visible';
-                    producto.style.opacity = '1';
-                } else {
-                    producto.style.display = 'none'; // Las oculta por completo sin alterar el espacio
-                }
+        const tuNumeroWhatsApp = "51999999999"; // <--- CAMBIA ESTO por tu número real de WhatsApp
+
+        // Función para mostrar los productos en la página
+        function mostrarProductos(productosAMostrar) {
+            const contenedor = document.getElementById('grid-productos');
+            contenedor.innerHTML = ""; // Limpiar antes de pintar
+
+            productosAMostrar.forEach(p => {
+                const mensaje = `Hola, me interesa el producto ${p.nombre} (${p.precio})`;
+                const linkWp = `https://wa.me/${tuNumeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+                const tarjeta = document.createElement('div');
+                tarjeta.className = 'tarjeta-producto';
+                tarjeta.innerHTML = `
+                    <img src="${p.img}" alt="${p.nombre}">
+                    <div class="info-producto">
+                        <h3>${p.nombre}</h3>
+                        <span class="precio">$${p.precio.toFixed(2)}</span>
+                        <p>${p.descripcion}</p>
+                        <a href="${linkWp}" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+                    </div>
+                `;
+                contenedor.appendChild(tarjeta);
             });
         }
+
+        // Función para filtrar por categoría
+        function filtrarProductos(categoria, botonElemento) {
+            // Cambiar clase activa en los botones
+            document.querySelectorAll('.btn-filtro').forEach(btn => btn.classList.remove('activo'));
+            botonElemento.classList.add('activo');
+
+            if (categoria === 'todos') {
+                mostrarProductos(productos);
+            } else {
+                const filtrados = productos.filter(p => p.categoria === categoria);
+                mostrarProductos(filtrados);
+            }
+        }
+
+        // Cargar todos los productos al abrir la página por primera vez
+        window.onload = () => mostrarProductos(productos);
     </script>
 
+    <!-- Pie de página -->
     <footer>
         <p>&copy; 2026 Tu Marca de Ropa. Todos los derechos reservados.</p>
     </footer>
