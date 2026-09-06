@@ -75,9 +75,11 @@
             productos.forEach(producto => {
                 const catProducto = producto.getAttribute('data-categoria');
                 if (categoria === 'todos' || catProducto === categoria) {
-                    producto.style.display = 'flex';
+                    producto.style.display = 'flex'; // Mantendrá la estructura interna limpia
+                    producto.style.visibility = 'visible';
+                    producto.style.opacity = '1';
                 } else {
-                    producto.style.display = 'none';
+                    producto.style.display = 'none'; // Las oculta por completo sin alterar el espacio
                 }
             });
         }
