@@ -111,3 +111,98 @@ footer {
     color: #888;
     font-size: 0.9rem;
 }
+
+/* Contenedor principal que une el menú lateral y el catálogo */
+.contenedor-principal {
+    display: flex;
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* Barra lateral de filtros (Sidebar) */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar h3 {
+    font-size: 1.1rem;
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 10px;
+}
+
+.lista-categorias {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-categorias li {
+    margin-bottom: 10px;
+}
+
+.btn-filtro {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #555;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-filtro:hover, .btn-filtro.activo {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+}
+/* CAMBIOS */
+/* Ajuste del Grid principal para que ocupe el espacio restante */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Diseño responsivo para celulares (la barra pasa arriba) */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+    .lista-categorias {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .lista-categorias li {
+        margin-bottom: 0;
+        flex-grow: 1;
+    }
+    .btn-filtro {
+        text-align: center;
+        background: #f1f1f1;
+    }
+}
